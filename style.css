@@ -1,0 +1,114 @@
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc); /* Gradient background */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #fff;
+}
+
+#coinsDisplay {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Game Board Styling */
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 10px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.box {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Box Hover Effect */
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Safe and Bomb Box Styling */
+.box.safe {
+    background: linear-gradient(145deg, #4caf50, #2c6b2f); /* Green with gradient */
+    color: white;
+}
+
+.box.bomb {
+    background: linear-gradient(145deg, #f44336, #9a0000); /* Red with gradient */
+    color: white;
+}
+
+.box.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Withdraw Button Styling */
+.withdraw-container {
+    margin-top: 40px;
+}
+
+#withdraw {
+    background: linear-gradient(145deg, #ff8c00, #ff4500); /* Orange gradient */
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#withdraw:disabled {
+    background: #bdbdbd;
+    color: #6c6c6c;
+    cursor: not-allowed;
+}
+
+#withdraw:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #gameBoard {
+        grid-template-columns: repeat(4, 60px);
+    }
+
+    #withdraw {
+        font-size: 1.2em;
+    }
+}
